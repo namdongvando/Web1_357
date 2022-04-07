@@ -1,6 +1,6 @@
 <?php 
 
-    $kq= "";
+$kq= "";
     if(isset($_GET["Soa"]) && isset($_GET["Sob"])){
         $a = intval($_GET["Soa"]);
         $b = intval($_GET["Sob"]);

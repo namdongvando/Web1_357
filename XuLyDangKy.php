@@ -21,7 +21,9 @@ try {
     {
         throw new Exception("Email Không Đúng Định Dạng");
     }
+// them tai khoan vao database
 } catch (Exception $e) {
+    echo $e->getMessage(); 
+    header("Location: dangky.php?e={$e->getMessage()}");
 
-    
 }
