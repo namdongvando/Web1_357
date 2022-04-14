@@ -1,51 +1,21 @@
 <?php
-spl_autoload_register(function ($className) {
-    //echo  "____" . $className . "____";
-    include("{$className}.php");
-});
-//  tat ca request phai chay qua file này
-// trừ public
-// include("App\backend\Controller\BaseController.php");
-// include("App\backend\Controller\danhmucController.php");
-
-$uri = $_SERVER["REQUEST_URI"];
-// chuyển chuỗi thành mảng string2array
-$a = explode("/", $uri);
-// var_dump($a);
-$ControllerName = $a[1];
-$ActionName = isset($a[2]) ? $a[2] : "";
-$app = new Appliction();
-$app->setParams($a);
-$app->setControllerName($ControllerName);
-$app->setActionName($ActionName);
-$className = "App\\backend\\Controller\\{$ControllerName}Controller";
-// echo $className;
-if (file_exists($className . ".php")) {
-    // có controller;
-    $Controller = new $className();
-    // kiem tra action
-    if (method_exists($Controller, $ActionName)) {
-        // có action
-        $Controller->$ActionName();
-    } else {
-        // action mặc định
-        $Controller->index();
-    }
+//phpinfo();
+echo "<h1>Xin chào</h1>";
+?>
+<h1><?php echo "xin chào" ?></h1>
+<?php
+$a = 4;
+if ($a % 2 == 0) {
+    echo "Số chẵn";
 } else {
-    // không có controller
-    $Controller = new App\backend\Controller\indexController();
-    $Controller->index();
+    echo "Số Lẻ";
 }
-
-
-
-// echo $_GET["v"];
-
-use App\backend\Controller\BaseController;
-use App\backend\Controller\danhmucController;
-
-// echo "_index.php_";
-// $baseCtrl = new BaseController();
-// $baseCtrl->index();
-// $baseCtrl = new danhmucController();
-// $baseCtrl->index();
+for ($i = 0; $i < 100; $i++) {
+    echo "<h2>{$i}</h2>";
+}
+for ($i = 0; $i < 100; $i++) {
+  ?>
+<div>San Pham <?php echo $i; ?></div>
+<?php
+}
+?>
