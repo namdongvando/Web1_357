@@ -39,8 +39,7 @@
       border: 3px solid goldenrod;
       margin: auto;
     }
-
-    .alert {
+    .alert{
       color: red;
     }
   </style>
@@ -48,7 +47,7 @@
 
 <body>
   <h1>Đăng Ký</h1>
-  <div class="alert">
+  <div class="alert" >
     <?php
     if (isset($_GET["e"])) {
       echo $_GET["e"];
